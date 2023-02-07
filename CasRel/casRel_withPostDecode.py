@@ -7,7 +7,6 @@ from collections import defaultdict
 from random import choice
 import json
 import torch.nn as nn
-import torch
 
 import pandas as pd
 from tqdm import tqdm
