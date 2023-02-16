@@ -312,25 +312,6 @@ def test(model, dev_iter, batch):
                 df.loc['rel_2']['TP'] += 1
                 df.loc['triple_total']['TP'] += 1
 
-
-
-    # df.loc['triple_total', 'p'] = df['TP']['triple_total'] / (df['PRED']['triple_total'] + 1e-9)
-    # df.loc['triple_total', 'r'] = df['TP']['triple_total'] / (df['REAL']['triple_total'] + 1e-9)
-    # df.loc['triple_total', 'f1'] = 2 * df['p']['triple_total'] * df['r']['triple_total'] / (df['p']['triple_total'] + df['r']['triple_total'] + 1e-9)
-
-    # total_precision = df['TP']['triple_total'] / (df['PRED']['triple_total'] + 1e-9)
-    # total_recall = df['TP']['triple_total'] / (df['REAL']['triple_total'] + 1e-9)
-    # total_f1 = 2 * total_precision * total_recall / (total_precision + total_recall + 1e-9)
-
-    # df.loc['triple', 'p'] = df['TP']['triple'] / (df['PRED']['triple'] + 1e-9)
-    # df.loc['triple', 'r'] = df['TP']['triple'] / (df['REAL']['triple'] + 1e-9)
-    # df.loc['triple', 'f1'] = 2 * df['p']['triple'] * df['r']['triple'] / (
-    #         df['p']['triple'] + df['r']['triple'] + 1e-9)
-
-    # triple_precision = df['TP']['triple'] / (df['PRED']['triple'] + 1e-9)
-    # triple_recall = df['TP']['triple'] / (df['REAL']['triple'] + 1e-9)
-    # triple_f1 = 2 * triple_precision * triple_recall / (
-    #         triple_precision + triple_recall + 1e-9)
     total_precision, total_recall, total_f1 = calc_prf1('triple_total', df)
     r0_p, r0_r, r0_f1 = calc_prf1('rel_0', df)
     r1_p, r1_r, r1_f1 = calc_prf1('rel_1', df)
